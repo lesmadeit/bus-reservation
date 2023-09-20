@@ -10,6 +10,11 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <title>Bus Reservation System</title>
+    <style>
+        .navbar-nav {
+            margin-left: auto;
+        }
+    </style>
     
 </head>
 <body>
@@ -29,7 +34,7 @@
                 <a class="nav-item nav-link " href="{% url 'signout' %}" style="color: white;">Sign out</a>
                 {% else %}
                 <a class="nav-item nav-link " href="{% url 'signup' %}" style="color: white;">Sign Up</a>
-                <a class="nav-item nav-link " href="{% url 'signin' %}" style="color: white;">Log in</a>
+                <a class="nav-item nav-link " href="{% url 'signin' %}" style="color: white;">Log In</a>
                 {% endif %}
 
 
@@ -37,6 +42,7 @@
         </div>
     </div>
 </nav>
+
 {% block content %}
 {% endblock %}
 <!-- Optional JavaScript -->

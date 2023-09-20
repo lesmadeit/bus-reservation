@@ -16,7 +16,7 @@ def home(request):
     if request.user.is_authenticated:
         return render(request, 'myapp/home.html')
     else:
-        return render(request, 'myapp/signin.html')
+        return render(request, 'myapp/home.html')
     
 
 @login_required(login_url='signin')
