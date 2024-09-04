@@ -1,1 +1,1 @@
-A simple bus revervation system using Django and Bootstrap
+A simple bus reservation system using Django and Bootstrap
