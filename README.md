@@ -1,1 +1,1 @@
-A simple calculator app using Django and Bootstrap
+A simple bus revervation system using Django and Bootstrap
