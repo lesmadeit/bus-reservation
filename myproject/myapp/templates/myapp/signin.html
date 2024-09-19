@@ -1,10 +1,12 @@
 {% extends 'myapp/base.html' %}
+{% load static %}
 {% block content %}
 <div class="container">
     
         <div class="row">
             <div class="col-sm-6 mx-auto" style="margin-top: 70px">
                 <h2>Log in</h2>
+                <br>
 
                 <form action="{% url 'signin' %}" method="post">
                     {% csrf_token %}
@@ -14,15 +16,18 @@
                             <input name='name' class="form-control" type="text" id="example-email-input">
                         </div>
                     </div>
+                    <br>
                     <div class="form-group row">
                         <label for="example-email-input" class="col-2 col-form-label">Password:</label>
                         <div class="col-10">
                             <input name='password' class="form-control" type="password">
                         </div>
                     </div>
+                    <br>
                     <div class="pull-right">
                         <button type="Submit" class="btn btn-success float-right">Sign in</button>
                     </div>
+                    <br>
 
                 </form>
                 <p>{{error}}</p>

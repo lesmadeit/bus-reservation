@@ -1,14 +1,34 @@
-
-<!doctype html>
+{% load static %}
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Bus Reservation</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="{% static 'myapp/img/favicon.png' %}" rel="icon">
+    <link href="{% static 'myapp/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'myapp/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'myapp/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'myapp/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'myapp/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'myapp/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'myapp/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'myapp/css/style.css' %}" rel="stylesheet">
 
     <title>Bus Reservation System</title>
     <style>
@@ -19,43 +39,87 @@
     
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-success">
-    <div class="container">
-        <a class="navbar-brand" href="{% url 'home' %}" style="color: white;">Vallacar Transit</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-            <div class="navbar-nav" >
-                <a class="nav-item nav-link active pull-right" href="{% url 'home' %}" style="color: white;">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="{% url 'findbus' %}" style="color: white;">Find Bus</a>
-                <a class="nav-item nav-link" href="{% url 'seebookings' %}" style="color: white;">See Bookings</a>
-                {% if request.user.is_active %}
-                <a class="nav-item nav-link " href="{% url 'signout' %}" style="color: white;">Sign out</a>
-                {% else %}
-                <a class="nav-item nav-link " href="{% url 'signup' %}" style="color: white;">Sign Up</a>
-                <a class="nav-item nav-link " href="{% url 'signin' %}" style="color: white;">Log In</a>
-                {% endif %}
-
-
-            </div>
-        </div>
+    <!-- ======= Top Bar ======= -->
+  <section id="topbar" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope-fill"></i><a href="mailto:contact@example.com">lesmwendwa@gmail.com</a>
+        <i class="bi bi-phone-fill phone-icon"></i> +254722724071
+      </div>
+      <div class="social-links d-none d-md-block">
+        <a href="https://x.com/lesmadeit" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="https://www.facebook.com/youngleslee" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://instagram.com/lesmadeit" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/leslie-mwendwa-82109a22b/" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
     </div>
-</nav>
+  </section>
+
+<!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="{% url 'home' %}">Zoom </a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link active" href="{% url 'home' %}">Home</a></li>
+          <li><a class="nav-link" href="{% url 'findbus' %}">Find Bus</a></li>
+          <li><a class="nav-link" href="{% url 'seebookings' %}">See Bookings</a></li>
+          {% if request.user.is_active %}
+          <li><a class="nav-link" href="{% url 'signout' %}">Sign Out</a></li>
+          {% else %}
+          <li><a class="nav-link" href="{% url 'signup' %}">Register</a></li>
+          <li><a class="nav-link" href="{% url 'signin' %}">Sign In</a></li>
+          {% endif %}
+          
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
 
 {% block content %}
 {% endblock %}
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
+<br>
+
+<!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <h3>Green</h3>
+      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+      <div class="social-links">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+      <div class="copyright">
+        &copy; Copyright <strong><span>Green</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/green-free-one-page-bootstrap-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+<!-- Vendor JS Files -->
+ <script src="{% static 'myapp/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+ <script src="{% static 'myapp/vendor/glightbox/js/glightbox.min.js' %}"></script>
+ <script src="{% static 'myapp/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+ <script src="{% static 'myapp/vendor/swiper/swiper-bundle.min.js' %}"></script>
+ <script src="{% static 'myapp/vendor/php-email-form/validate.js' %}"></script>
+
+ <!-- Template Main JS File -->
+ <script src="{% static 'myapp/js/main.js' %}"></script>
+
 </body>
 </html>
