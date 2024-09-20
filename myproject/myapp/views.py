@@ -142,7 +142,7 @@ def signin(request):
             context["error"] = "Provide valid credentials"
             return render(request, 'myapp/signin.html', context)
     else:
-        context["error"] = "You are not logged in"
+        context["error"] = "You must be logged in!"
         return render(request, 'myapp/signin.html', context)
     
 

@@ -1,5 +1,45 @@
-{% extends 'myapp/base.html' %}
 {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Bus Reservation</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="{% static 'myapp/img/favicon.png' %}" rel="icon">
+    <link href="{% static 'myapp/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'myapp/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'myapp/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'myapp/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'myapp/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'myapp/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'myapp/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'myapp/css/style.css' %}" rel="stylesheet">
+    
+    
+</head>
+<body>
+<header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="{% url 'home' %}">Zoom </a></h1>
+    </div>
+</header>
+
 {% block content %}
 <div class="container">
         <div class="row">
@@ -32,11 +72,43 @@
                     <div class="pull-right">
                         <button type="submit" class="btn btn-success float-right">Sign up</button>
                     </div>
-
                 </form>
+                <br>
+                <span> Already have an account?</span>
+
+                <a href="{% url 'signin' %}"> Log In</a>
+                <br><br>
+                <a href="{% url 'home' %}"  class="btn btn-success"> Back to Home</a>
             </div>
         </div>
 
     </div>
+    {% endblock %}
+    <br><br><br><br><br><br>
+    <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      
+      <div class="social-links">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+      <div class="copyright">
+        &copy; Copyright <strong><span>lesmadeit</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer><!-- End Footer -->
 
-{% endblock %}
+<!-- Vendor JS Files -->
+ <script src="{% static 'myapp/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+ <script src="{% static 'myapp/vendor/glightbox/js/glightbox.min.js' %}"></script>
+ <script src="{% static 'myapp/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+ <script src="{% static 'myapp/vendor/swiper/swiper-bundle.min.js' %}"></script>
+ <script src="{% static 'myapp/vendor/php-email-form/validate.js' %}"></script>
+
+ <!-- Template Main JS File -->
+ <script src="{% static 'myapp/js/main.js' %}"></script>
+</body>
+</html>
