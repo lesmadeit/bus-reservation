@@ -1,36 +1,37 @@
 {% extends 'myapp/base.html' %}
 {% load static %}
 {% block content %}
+<br><br>
 <h3>{{msg}}</h3>
-<h2>List of buses</h2>
+<center><h2>List of buses</h2></center>
 <table class="table table-striped">
-    <thead style="background-color: blue; color: white;">
-    <td>BOOKING ID</td>
-    <td>USER NAME</td>
-    <td>BUS NAME</td>
-    <td>SOURCE</td>
-    <td>DESTINATION</td>
-    <td>NUM OF SEATS</td>
-    <td>PRICE</td>
-    <td>DATE</td>
-    <td>TIME</td>
-    <td>STATUS</td>
+    <thead style="background-color: #5cb874; color: white; ">
+    <td style="border: 1px solid black; padding: 10px;">BOOKING ID</td>
+    <td style="border: 1px solid black; padding: 10px;">USER NAME</td>
+    <td style="border: 1px solid black; padding: 10px;">BUS NAME</td>
+    <td style="border: 1px solid black; padding: 10px;">SOURCE</td>
+    <td style="border: 1px solid black; padding: 10px;">DESTINATION</td>
+    <td style="border: 1px solid black; padding: 10px;">NUM OF SEATS</td>
+    <td style="border: 1px solid black; padding: 10px;">PRICE</td>
+    <td style="border: 1px solid black; padding: 10px;">DATE</td>
+    <td style="border: 1px solid black; padding: 10px;">TIME</td>
+    <td style="border: 1px solid black; padding: 10px;">STATUS</td>
 
     </thead>
 
 
     {% for row in book_list %}
     <tr>
-        <td>{{row.id}}</td>
-        <td>{{row.name}}</td>
-        <td>{{row.bus_name}}</td>
-        <td>{{row.source}}</td>
-        <td>{{row.dest}}</td>
-        <td>{{row.nos}}</td>
-        <td>{{row.price}}</td>
-        <td>{{row.date}}</td>
-        <td>{{row.time}}</td>
-        <td>{{row.status}}</td>
+        <td style="border: 1px solid black; padding: 10px;">{{row.id}}</td>
+        <td style="border: 1px solid black; padding: 10px;">{{row.name}}</td>
+        <td style="border: 1px solid black; padding: 10px;">{{row.bus_name}}</td>
+        <td style="border: 1px solid black; padding: 10px;">{{row.source}}</td>
+        <td style="border: 1px solid black; padding: 10px;">{{row.dest}}</td>
+        <td style="border: 1px solid black; padding: 10px;">{{row.nos}}</td>
+        <td style="border: 1px solid black; padding: 10px;">{{row.price}}</td>
+        <td style="border: 1px solid black; padding: 10px;">{{row.date}}</td>
+        <td style="border: 1px solid black; padding: 10px;">{{row.time}}</td>
+        <td style="border: 1px solid black; padding: 10px;">{{row.status}}</td>
     </tr>
     {% endfor %}
 
